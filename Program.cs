@@ -1,7 +1,14 @@
+using RazorEmails.Mailers;
+using RazorEmails.Rendering;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<Mailer>();
+builder.Services.AddScoped<MessageMailer>();
+builder.Services.AddScoped<RazorViewRenderer>();
 
 var app = builder.Build();
 

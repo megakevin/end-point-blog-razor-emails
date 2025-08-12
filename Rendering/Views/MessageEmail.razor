@@ -1,0 +1,22 @@
+@using RazorEmails.Rendering.ViewModels
+
+<LayoutView Layout="@typeof(MainLayout)">
+
+<p>
+  Hello @Model.Greeting.
+</p>
+
+<p>
+  We have a message for you: @Model.Message
+</p>
+
+<p>
+  Message sent at @DateTime.Now.ToString().
+</p>
+
+</LayoutView>
+
+@code {
+  [Parameter]
+  public MessageEmailViewModel Model { get; set; } = default!;
+}
